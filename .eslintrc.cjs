@@ -47,6 +47,7 @@ module.exports = {
           ["@", "./src"],
           ["@assets", "./src/assets"],
           ["@components", "./src/components"],
+          ["@pages", "./src/pages"],
         ],
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
