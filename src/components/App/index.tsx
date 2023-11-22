@@ -1,11 +1,9 @@
+import AppRoutes from "@/routes";
+
 import "@/components/App/style.css";
 
 const App = () => {
-  return (
-    <>
-      <h1>hello</h1>
-    </>
-  );
+  return <AppRoutes />;
 };
 
 export default App;
