@@ -1,0 +1,26 @@
+.box {
+  background-color: #ff6600;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.footer {
+  color: #fff;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.linkTitle {
+  font-family: "Lora-Medium";
+}
