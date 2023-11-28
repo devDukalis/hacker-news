@@ -25,3 +25,6 @@ dist-ssr
 
 # Husky
 .husky
+
+# env
+.env
