@@ -1,32 +1,21 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-import { Item, PostList } from "@/models";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Story, Comment } from "@/models";
 
 const hackerNewsApi = createApi({
-  reducerPath: "hnApi",
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.BASE_URL }),
-  endpoints: (build) => ({
-    getPostList: build.query<PostList, void>({
-      query: () => ({
-        url: "/posts",
-      }),
+  reducerPath: "hackerNewsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_BASE_URL }),
+  endpoints: (builder) => ({
+    getTopStories: builder.query<number[], void>({
+      query: () => "topstories.json",
     }),
-    getItem: build.query<Item, number>({
-      query: (id) => ({
-        url: "/item",
-        params: {
-          id,
-        },
-      }),
+    getStory: builder.query<Story, number>({
+      query: (storyId: number) => `item/${storyId}.json`,
     }),
-    getPost: build.query<Item, number>({
-      query: (id) => ({
-        url: "/post",
-        params: {
-          id,
-        },
-      }),
+    getComment: builder.query<Comment, number>({
+      query: (commentId: number) => `item/${commentId}.json`,
     }),
   }),
 });
 
 export default hackerNewsApi;
+export const { useGetTopStoriesQuery, useGetStoryQuery, useGetCommentQuery } = hackerNewsApi;

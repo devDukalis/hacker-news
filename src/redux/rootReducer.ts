@@ -1,9 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
+import topStoriesSlice from "@/redux/features/topStoriesSlice";
 import hackerNewsApi from "@/services/api";
-import storiesReducer from "@/redux/features/newsStoriesSlice";
 
 const rootReducer = combineReducers({
-  stories: storiesReducer,
+  topStories: topStoriesSlice,
   [hackerNewsApi.reducerPath]: hackerNewsApi.reducer,
 });
 
