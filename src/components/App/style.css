@@ -28,8 +28,18 @@
     url("/src/assets/fonts/Lora-Bold.ttf") format("ttf");
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "Segoe-UI";
+  font-weight: 500;
+  src:
+    url("/src/assets/fonts/Segoe\ UI.woff2") format("woff2"),
+    url("/src/assets/fonts/Segoe-UI.woff") format("woff"),
+    url("/src/assets/fonts/Segoe\ UI.ttf") format("ttf");
+}
+
 #root {
   text-align: center;
   height: 100vh;
-  font-family: "Lora-Regular", serif;
+  font-family: "Segoe-UI", "Lora-Regular", serif;
 }
