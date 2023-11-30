@@ -5,7 +5,6 @@ import hackerNewsApi from "@/services/api";
 
 const store = configureStore({
   reducer: rootReducer,
-  devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(hackerNewsApi.middleware),
 });
 
