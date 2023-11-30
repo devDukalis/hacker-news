@@ -23,9 +23,12 @@ const updateInterval = 60000;
 const News = () => {
   const { id } = useParams();
 
-  const { data, isLoading, isSuccess, isError, refetch } = useGetStoryQuery(Number(id), {
-    pollingInterval: updateInterval,
-  });
+  const { data, isLoading, isSuccess, isError, isFetching, refetch } = useGetStoryQuery(
+    Number(id),
+    {
+      pollingInterval: updateInterval,
+    },
+  );
 
   const commentsIdsToRefetch = useRef({} as { [key: number]: () => void });
 
@@ -35,14 +38,17 @@ const News = () => {
     }
   }, []);
 
-  const handleClick = useCallback(async () => {
+  const handleUpdateComments = useCallback(async () => {
+    if (!refetch || isFetching || !data) return;
+
     const result = await refetch().unwrap();
+
     if (!result.kids || result.kids.length === 0) return;
 
     for (const key in commentsIdsToRefetch.current) {
       commentsIdsToRefetch.current[key]();
     }
-  }, [refetch]);
+  }, [refetch, isFetching, data]);
 
   return (
     <div className={classes.container}>
@@ -51,7 +57,7 @@ const News = () => {
         ◀️
       </Link>
 
-      <button onClick={handleClick} className={classes.updateBtn}>
+      <button onClick={handleUpdateComments} className={classes.updateBtn}>
         🔄
       </button>
 
