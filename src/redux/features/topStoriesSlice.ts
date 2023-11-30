@@ -7,7 +7,6 @@ interface State {
   isSuccess: boolean;
   pageSize: number;
   pageNumber: number;
-  displayUpdateButton: boolean;
 }
 
 const initialState: State = {
@@ -17,7 +16,6 @@ const initialState: State = {
   isSuccess: false,
   pageSize: 10,
   pageNumber: 1,
-  displayUpdateButton: false,
 };
 
 const topStoriesSlice = createSlice({
@@ -41,18 +39,10 @@ const topStoriesSlice = createSlice({
     updatePageNumber: (state, action: PayloadAction<number>) => {
       state.pageNumber = action.payload;
     },
-    toggleDisplayUpdateButton: (state, action: PayloadAction<boolean>) => {
-      state.displayUpdateButton = action.payload;
-    },
   },
 });
 
 export default topStoriesSlice.reducer;
 
-export const {
-  getTopStoriesSuccess,
-  getTopStoriesError,
-  updatePageSize,
-  updatePageNumber,
-  toggleDisplayUpdateButton,
-} = topStoriesSlice.actions;
+export const { getTopStoriesSuccess, getTopStoriesError, updatePageSize, updatePageNumber } =
+  topStoriesSlice.actions;
