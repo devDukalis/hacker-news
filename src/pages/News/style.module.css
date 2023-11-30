@@ -1,3 +1,29 @@
-.test {
-  color: red;
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.iconBack {
+  position: fixed;
+  top: 0;
+  left: 0.8rem;
+  opacity: 0.7;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  background: transparent;
+  text-decoration: none;
+}
+
+.updateBtn {
+  position: fixed;
+  top: 0;
+  right: 0.5rem;
+  z-index: 10;
+  opacity: 0.7;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  background: transparent;
 }

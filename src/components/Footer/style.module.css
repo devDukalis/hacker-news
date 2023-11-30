@@ -1,6 +1,8 @@
 .box {
   background-color: #ff6600;
   width: 100%;
+  position: fixed;
+  bottom: 0;
   min-height: 50px;
   display: flex;
   justify-content: center;
@@ -17,10 +19,15 @@
   justify-content: space-evenly;
 }
 
-.link {
-  text-decoration: none;
-}
-
 .linkTitle {
   font-family: "Lora-Medium";
+  font-size: 1.2em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 30px;
 }

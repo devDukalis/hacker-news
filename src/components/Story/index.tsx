@@ -23,21 +23,29 @@ const Story = ({ storyId }: Props) => {
               icon={StarOutlined}
               text={data.score.toString()}
               key="list-vertical-star-o"
+              style={{ color: "#1677ff" }}
             />,
             <IconText
               icon={MessageOutlined}
               text={data.descendants ? data.descendants.toString() : "0"}
               key="list-vertical-message"
+              style={{ color: "#1677ff" }}
             />,
           ]}>
           <List.Item.Meta
-            title={<Link to={`/news/${storyId}`}>{data.title}</Link>}
-            description={`by ${data.by} 
-                              ${new Date(data.time * 1000).toLocaleDateString()} 
-                              ${new Date(data.time * 1000).toLocaleTimeString(undefined, {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                              })}`}
+            title={
+              <Link style={{ color: "#1f2338", fontWeight: 600 }} to={`/news/${storyId}`}>
+                {data.title}
+              </Link>
+            }
+            description={
+              <div style={{ color: "#656d76", opacity: 0.8 }}>{`by ${data.by} 
+                            ${new Date(data.time * 1000).toLocaleDateString()} 
+                            ${new Date(data.time * 1000).toLocaleTimeString(undefined, {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}`}</div>
+            }
           />
         </List.Item>
       );

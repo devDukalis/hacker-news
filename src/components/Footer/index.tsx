@@ -15,13 +15,13 @@ const Footer = () => {
           </a>
         </span>
         <span className={classes.linkTitle}>
-          API{" "}
+          API{""}
           <a
             className={classes.link}
             href="https://github.com/HackerNews/API"
             target="_blank"
             rel="noreferrer">
-            📱
+            📲
           </a>
         </span>
       </footer>

@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
@@ -6,7 +6,6 @@ import {
   getTopStoriesError,
   updatePageSize,
   updatePageNumber,
-  toggleDisplayUpdateButton,
 } from "@/redux/features/topStoriesSlice";
 
 import Story from "@/components/Story";
@@ -29,7 +28,6 @@ const Home = () => {
     pollingInterval: updateInterval,
   });
 
-  const displayUpdateButton = useAppSelector((state) => state.topStories.displayUpdateButton);
   const pageSize = useAppSelector((state) => state.topStories.pageSize);
   const pageNumber = useAppSelector((state) => state.topStories.pageNumber);
 
@@ -50,21 +48,6 @@ const Home = () => {
     }
   }, [isSuccess, isError, data, dispatch]);
 
-  const handleScroll = useCallback(() => {
-    if (window.scrollY > 50) {
-      dispatch(toggleDisplayUpdateButton(true));
-    } else {
-      dispatch(toggleDisplayUpdateButton(false));
-    }
-  }, [dispatch]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
   const currentPageData = useMemo(() => {
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = startIndex + pageSize;
@@ -75,11 +58,9 @@ const Home = () => {
   return (
     <div className={classes.container}>
       <Header title="Hacker News" />
-      {displayUpdateButton && (
-        <button onClick={() => refetch()} className={classes["updateBtn"]}>
-          🔄
-        </button>
-      )}
+      <button onClick={() => refetch()} className={classes.updateBtn}>
+        🔄
+      </button>
 
       <Main>
         <ContentLoader isError={isError} isLoading={isLoading} isSuccess={isSuccess}>
