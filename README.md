@@ -23,12 +23,10 @@ News page
   3. Author's nickname
   4. Date of publication
 - Clicking on the news takes you to the news page
-- The news list should be automatically updated once a minute without user involvement
-- There should be a button on the page to force the update of the news list
+- The news list automatically updated once a minute without user involvement
+- There is a button on the page to force the update of the news list
 
 ### News page
-
-Must contain:
 
 - A link to the news
 - News title
@@ -37,9 +35,9 @@ Must contain:
 - Counter for the number of comments
 - A list of comments in the form of a tree
 - Root comments are loaded immediately upon entering the page, nested comments are loaded by clicking on the root one.
-- The list of comments should be automatically updated once a minute without user involvement
-- There should be a button on the page to force updating the list of comments
-- There should be a button on the page to return to the home
+- The list of comments automatically updated once a minute without user involvement
+- There is a button on the page to force updating the list of comments
+- There is a button on the page to return to the home
 
 ## Tools
 
