@@ -15,7 +15,7 @@ type Props = {
 
 const iconStyle: React.CSSProperties = {
   position: "absolute",
-  left: "-5px",
+  left: "0",
   top: "3px",
   color: "#1677ff",
   fontSize: "20px",
@@ -27,8 +27,8 @@ const CommentBody = ({ comment, handleClick }: Props) => {
   const listStyle: React.CSSProperties = {
     position: "relative",
     cursor: comment.kids ? "pointer" : "default",
-    paddingLeft: comment.kids ? "24px" : "0",
-    marginLeft: comment.kids ? "-14px" : "0",
+    paddingLeft: comment.kids ? "25px" : "0",
+    marginLeft: comment.kids ? "-25px" : "0",
     border: "none",
     paddingBottom: 0,
     paddingTop: 0,
@@ -48,7 +48,7 @@ const CommentBody = ({ comment, handleClick }: Props) => {
             dangerouslySetInnerHTML={{ __html: sanitizedCommentText }}
             className={classes.commentText}></div>
         }
-        description={description}
+        description={<div className={classes.description}>{description}</div>}
       />
     </List.Item>
   );

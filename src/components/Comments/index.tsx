@@ -1,6 +1,8 @@
 import { Space, Typography } from "antd";
 import CommentsList from "@/components/CommentsList";
 
+import classes from "@/components/Comments/style.module.css";
+
 const { Title, Text } = Typography;
 
 type Pops = {
@@ -10,7 +12,7 @@ type Pops = {
 
 const Comments = ({ commentsIds, addCommentToRefetch }: Pops) => {
   return (
-    <>
+    <div className={classes.container}>
       <Space
         align={"center"}
         style={{
@@ -28,7 +30,7 @@ const Comments = ({ commentsIds, addCommentToRefetch }: Pops) => {
       ) : (
         <Text>no comments yet</Text>
       )}
-    </>
+    </div>
   );
 };
 
