@@ -4,12 +4,12 @@ import CommentBody from "@/components/CommentBody";
 import ContentLoader from "@/components/ContentLoader";
 import CommentsList from "@/components/CommentsList";
 
-type CommentProps = {
+type Props = {
   commentId: number;
   addCommentToRefetch: (id: number, refetch: () => void) => void;
 };
 
-const Comment = ({ commentId, addCommentToRefetch }: CommentProps) => {
+const Comment = ({ commentId, addCommentToRefetch }: Props) => {
   const { data: comment, isLoading, isSuccess, isError, refetch } = useGetCommentQuery(commentId);
 
   const [hasKids, setHasKids] = useState(false);

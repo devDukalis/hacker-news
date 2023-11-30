@@ -1,13 +1,13 @@
 import Comment from "@/components/Comment";
 import { List } from "antd";
 
-type CommentsListProps = {
+type Props = {
   commentsIds: number[];
   style?: React.CSSProperties;
   addCommentToRefetch: (id: number, refetch: () => void) => void;
 };
 
-const CommentsList = ({ commentsIds, style, addCommentToRefetch }: CommentsListProps) => {
+const CommentsList = ({ commentsIds, style, addCommentToRefetch }: Props) => {
   return (
     <List
       itemLayout="vertical"

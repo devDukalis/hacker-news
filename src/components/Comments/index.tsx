@@ -3,12 +3,12 @@ import CommentsList from "@/components/CommentsList";
 
 const { Title, Text } = Typography;
 
-type CommentsPops = {
+type Pops = {
   commentsIds: number[];
   addCommentToRefetch: (id: number, refetch: () => void) => void;
 };
 
-const Comments = ({ commentsIds, addCommentToRefetch }: CommentsPops) => {
+const Comments = ({ commentsIds, addCommentToRefetch }: Pops) => {
   return (
     <>
       <Space
