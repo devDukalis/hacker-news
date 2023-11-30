@@ -41,15 +41,12 @@ Must contain:
 - There should be a button on the page to force updating the list of comments
 - There should be a button on the page to return to the home
 
-## Requirements
+## Tools
 
-- Tools:
-  - [React](https://react.dev)
-  - [TypeScript](https://www.typescriptlang.org)
-  - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
-- Routing:
-  - [React Router v6](https://reactrouter.com/en/main)
-- UI library:
-  - [Antd](https://ant.design)
-- API:
-  - [Hacker News API](https://github.com/HackerNews/API)
+- [Vite](https://vitejs.dev)
+- [React](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Antd](https://ant.design)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+- [React Router](https://reactrouter.com/en/main)
+- [Hacker News API](https://github.com/HackerNews/API)
